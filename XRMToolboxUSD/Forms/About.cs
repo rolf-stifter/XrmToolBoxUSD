@@ -29,7 +29,7 @@ namespace XRMToolboxUSD.Forms
 
         private void linkLabel_codeLocationURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://github.com/rolf-stifter/XrmToolBoxUSD");
         }
     }
 }
