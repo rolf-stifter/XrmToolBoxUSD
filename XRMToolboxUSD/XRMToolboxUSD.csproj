@@ -134,12 +134,19 @@
     <Compile Include="Helpers\Enums\StateCode.cs" />
     <Compile Include="Helpers\Enums\WindowMode.cs" />
     <Compile Include="Helpers\GlobalProperties.cs" />
-    <Compile Include="Helpers\Layout.cs" />
+    <Compile Include="Helpers\Interfaces\DetailsUserControl.cs" />
+    <Compile Include="Helpers\Layout\ExpanderHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helpers\Layout\ExpanderHeader.Designer.cs">
+      <DependentUpon>ExpanderHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\Data.cs" />
     <Compile Include="Logic\Starter.cs" />
     <Compile Include="Logic\TreeViewGenerator.cs" />
     <Compile Include="Logic\USDTree.cs" />
     <Compile Include="Models\USDActionSubActionConnection.cs" />
+    <Compile Include="Models\USDEntity.cs" />
     <Compile Include="Models\USDEventActionConnection.cs" />
     <Compile Include="Models\USDAction.cs" />
     <Compile Include="Models\USDEvent.cs" />
@@ -169,17 +176,59 @@
     <Compile Include="UserControls\ActionDetails.Designer.cs">
       <DependentUpon>ActionDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Actions\AdvancedActionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Actions\AdvancedActionControl.Designer.cs">
+      <DependentUpon>AdvancedActionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Actions\GeneralActionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Actions\GeneralActionControl.Designer.cs">
+      <DependentUpon>GeneralActionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\EventDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\EventDetails.Designer.cs">
       <DependentUpon>EventDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Events\GeneralEventControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Events\GeneralEventControl.Designer.cs">
+      <DependentUpon>GeneralEventControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\HostedControlDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\HostedControlDetails.Designer.cs">
       <DependentUpon>HostedControlDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HostedControls\AutomationsHostedControlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HostedControls\AutomationsHostedControlControl.Designer.cs">
+      <DependentUpon>AutomationsHostedControlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HostedControls\ExtensionsHostedControlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HostedControls\ExtensionsHostedControlControl.Designer.cs">
+      <DependentUpon>ExtensionsHostedControlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HostedControls\GeneralHostedControlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HostedControls\GeneralHostedControlControl.Designer.cs">
+      <DependentUpon>GeneralHostedControlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HostedControls\HostingHostedControlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HostedControls\HostingHostedControlControl.Designer.cs">
+      <DependentUpon>HostingHostedControlControl.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +238,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\Layout\ExpanderHeader.resx">
+      <DependentUpon>ExpanderHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -200,11 +252,32 @@
     <EmbeddedResource Include="UserControls\ActionDetails.resx">
       <DependentUpon>ActionDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Actions\AdvancedActionControl.resx">
+      <DependentUpon>AdvancedActionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Actions\GeneralActionControl.resx">
+      <DependentUpon>GeneralActionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\EventDetails.resx">
       <DependentUpon>EventDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Events\GeneralEventControl.resx">
+      <DependentUpon>GeneralEventControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\HostedControlDetails.resx">
       <DependentUpon>HostedControlDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HostedControls\AutomationsHostedControlControl.resx">
+      <DependentUpon>AutomationsHostedControlControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HostedControls\ExtensionsHostedControlControl.resx">
+      <DependentUpon>ExtensionsHostedControlControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HostedControls\GeneralHostedControlControl.resx">
+      <DependentUpon>GeneralHostedControlControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HostedControls\HostingHostedControlControl.resx">
+      <DependentUpon>HostingHostedControlControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -215,11 +288,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Debug (
+  IF NOT EXIST Plugins mkdir Plugins
+  move /Y XRMToolboxUSD.dll Plugins
+)</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>taskkill /IM "XrmToolBox.exe" /F /FI "STATUS eq RUNNING"</PreBuildEvent>
   </PropertyGroup>
 </Project>

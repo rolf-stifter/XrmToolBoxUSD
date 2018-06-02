@@ -6,7 +6,7 @@ using XRMToolboxUSD.Helpers.Enums;
 namespace XRMToolboxUSD.Models
 
 {
-    public class USDAction
+    public class USDAction : USDEntity
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

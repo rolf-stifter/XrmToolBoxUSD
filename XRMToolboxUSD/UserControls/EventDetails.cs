@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
 using XRMToolboxUSD.Helpers;
+using XRMToolboxUSD.Helpers.Interfaces;
 using XRMToolboxUSD.Models;
 
 namespace XRMToolboxUSD.UserControls
 {
-    public partial class EventDetails : UserControl
+    public partial class EventDetails : UserControl,DetailsUserControl<USDEvent>
     {
         public EventDetails()
         {
@@ -15,10 +16,7 @@ namespace XRMToolboxUSD.UserControls
         public void FillDetails(USDEvent usdEvent)
         {
             if (usdEvent == null) return;
-
-            textBox_id.Text = usdEvent.Id.ToString();
-            textBox_name.Text = usdEvent.Name;
-            textBox_hostedApplication.Text = Entities.GetEntityReferenceName(usdEvent.HostedControl);
+            generalEventControl.FillDetails(usdEvent);
 
             //Set Link in tag
             linkLabel_url.Tag = $"{GlobalProperties.WebApplicationUrl}main.aspx?etn=msdyusd_uiievent&id={{{usdEvent.Id }}}&pagetype=entityrecord";
@@ -31,8 +29,8 @@ namespace XRMToolboxUSD.UserControls
 
         private void label_expanderGeneral_Click(object sender, EventArgs e)
         {
-            var expanderLabel = (Label)sender;
-            Helpers.Layout.SetInverseVisibility(expanderLabel);
+            //var expanderLabel = (Label)sender;
+            //Helpers.Layout.SetInverseVisibility(expanderLabel);
         }
     }
 }

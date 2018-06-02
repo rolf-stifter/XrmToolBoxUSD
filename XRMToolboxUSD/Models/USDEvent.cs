@@ -5,7 +5,7 @@ using XRMToolboxUSD.Helpers.Enums;
 
 namespace XRMToolboxUSD.Models
 {
-    public class USDEvent
+    public class USDEvent : USDEntity
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

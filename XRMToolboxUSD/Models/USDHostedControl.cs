@@ -4,7 +4,7 @@ using XRMToolboxUSD.Helpers.Enums;
 
 namespace XRMToolboxUSD.Models
 {
-    public class USDHostedControl
+    public class USDHostedControl : USDEntity
     {
         //General
         public Guid Id { get; set; }
