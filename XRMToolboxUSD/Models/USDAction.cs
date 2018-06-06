@@ -8,8 +8,6 @@ namespace XRMToolboxUSD.Models
 {
     public class USDAction : USDEntity
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
         public int Order { get; set; }
         public EntityReference HostedControl { get; set; }
         public EntityReference Action { get; set; }

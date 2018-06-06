@@ -108,33 +108,69 @@ namespace XRMToolboxUSD
             DrawTreeView(usdConfigData);
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            panel3.Controls.Clear();
-
-            var usdElement = ((TreeView)sender).SelectedNode.Tag;
-
-            if (usdElement is USDHostedControl)
-            {
-                hostedCotrolDetailsControl.Tag = (USDHostedControl)usdElement;
-                panel3.Controls.Add(hostedCotrolDetailsControl);
-                hostedCotrolDetailsControl.FillDetails((USDHostedControl)usdElement);
-            }
-            else if (usdElement is USDEvent)
-            {
-                panel3.Controls.Add(eventDetailsControl);
-                eventDetailsControl.FillDetails((USDEvent)usdElement);
-            }
-            else if (usdElement is USDAction)
-            {
-                panel3.Controls.Add(actionDetailsControl);
-                actionDetailsControl.FillDetails((USDAction)usdElement);
-            }
-        }
-
         private void toolStripButton_about_Click(object sender, EventArgs e)
         {
             new Forms.About().ShowDialog();
+        }
+
+        private void toolStripMenuItem_copyID_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode.Tag is USDEntity)
+                Clipboard.SetText((treeView1.SelectedNode.Tag as USDEntity).Id.ToString());
+        }
+
+        private void toolStripMenuItem_copyName_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode.Tag is USDEntity)
+                Clipboard.SetText((treeView1.SelectedNode.Tag as USDEntity).Name);
+        }
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (treeView1.SelectedNode == null) return;
+
+            if (e.Button == MouseButtons.Right && sender is Control)
+            {
+                ShowContextMenu(e.Location);
+            }
+        }
+
+        private void ShowContextMenu(Point location)
+        {
+            // Get the node that the user has clicked.
+            TreeNode node = treeView1.GetNodeAt(location);
+            if (node == null) return;
+
+            treeView1.SelectedNode = node;
+
+            contextMenuStrip_treeElements.Show(treeView1, location.X, location.Y);
+        }
+
+        private void ShowDetails(USDEntity usdEntity)
+        {
+            panel3.Controls.Clear();
+
+            if (usdEntity is USDHostedControl)
+            {
+                hostedCotrolDetailsControl.Tag = (USDHostedControl)usdEntity;
+                panel3.Controls.Add(hostedCotrolDetailsControl);
+                hostedCotrolDetailsControl.FillDetails((USDHostedControl)usdEntity);
+            }
+            else if (usdEntity is USDEvent)
+            {
+                panel3.Controls.Add(eventDetailsControl);
+                eventDetailsControl.FillDetails((USDEvent)usdEntity);
+            }
+            else if (usdEntity is USDAction)
+            {
+                panel3.Controls.Add(actionDetailsControl);
+                actionDetailsControl.FillDetails((USDAction)usdEntity);
+            }
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            ShowDetails((USDEntity)treeView1.SelectedNode.Tag);
         }
     }
 }

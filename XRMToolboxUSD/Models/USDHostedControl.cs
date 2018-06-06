@@ -7,8 +7,6 @@ namespace XRMToolboxUSD.Models
     public class USDHostedControl : USDEntity
     {
         //General
-        public Guid Id { get; set; }
-        public string Name { get; set; }
         public int SortOrder { get; set; }
         public string DisplayName { get; set; }
         public StateCode StateCode { get; set; }
