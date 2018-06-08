@@ -110,7 +110,7 @@ namespace XRMToolboxUSD
 
         private void toolStripButton_about_Click(object sender, EventArgs e)
         {
-            new Forms.About().ShowDialog();
+            new Forms.AboutBox().ShowDialog();
         }
 
         private void toolStripMenuItem_copyID_Click(object sender, EventArgs e)
