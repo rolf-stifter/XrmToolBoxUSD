@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("XRMToolboxUSD")]
+[assembly: AssemblyTitle("USD Viewer")]
 [assembly: AssemblyDescription("This plugin bundles some improved CRM functionalities concerning USD.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Rolf Stifter (Recommendations by Moussa El Annan)")]
