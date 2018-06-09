@@ -1,29 +1,26 @@
-﻿using Microsoft.Xrm.Sdk;
-using System;
-using System.Windows.Forms;
-using XrmToolBox.Extensibility;
+﻿using System.Windows.Forms;
 using XRMToolboxUSD.Helpers.Interfaces;
-using XRMToolboxUSD.Models;
+using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD.UserControls
 {
-    public partial class HostedControlDetails : UserControl, DetailsUserControl<USDHostedControl>
+    public partial class HostedControlDetails : UserControl, DetailsUserControl<HostedControl>
     {
         public HostedControlDetails()
         {
             InitializeComponent();
         }
 
-        public void FillDetails(USDHostedControl usdHostedControl)
+        public void FillDetails(HostedControl hostedControl)
         {
-            if (usdHostedControl == null) return;
-            generalHostedControlControl.FillDetails(usdHostedControl);
-            hostingHostedControlControl.FillDetails(usdHostedControl);
-            automationsHostedControlControl.FillDetails(usdHostedControl);
-            extensionsHostedControlControl.FillDetails(usdHostedControl);
+            if (hostedControl == null) return;
+            generalHostedControlControl.FillDetails(hostedControl);
+            hostingHostedControlControl.FillDetails(hostedControl);
+            automationsHostedControlControl.FillDetails(hostedControl);
+            extensionsHostedControlControl.FillDetails(hostedControl);
 
             //Set Link in tag
-            linkLabel_url.Tag = $"{Helpers.GlobalProperties.WebApplicationUrl}main.aspx?etn=uii_hostedapplication&id={{{usdHostedControl.Id }}}&pagetype=entityrecord";
+            linkLabel_url.Tag = $"{Helpers.GlobalProperties.WebApplicationUrl}main.aspx?etn=uii_hostedapplication&id={{{hostedControl.Id }}}&pagetype=entityrecord";
         }
 
         private void linkLabel_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

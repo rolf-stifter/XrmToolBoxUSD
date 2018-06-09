@@ -71,9 +71,8 @@
             this.generalEventControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.generalEventControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.generalEventControl.Location = new System.Drawing.Point(3, 3);
-            this.generalEventControl.Margin = new System.Windows.Forms.Padding(3);
             this.generalEventControl.Name = "generalEventControl";
-            this.generalEventControl.Size = new System.Drawing.Size(194, 125);
+            this.generalEventControl.Size = new System.Drawing.Size(142, 125);
             this.generalEventControl.TabIndex = 0;
             // 
             // panel1

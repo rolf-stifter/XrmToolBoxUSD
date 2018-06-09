@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using XRMToolboxUSD.Helpers;
 using XRMToolboxUSD.Helpers.Enums;
-using XRMToolboxUSD.Models;
+using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD.Repositories
 {
     public static class HostedControlRepository
     {
-        public static List<USDHostedControl> GetHostedControls(IOrganizationService service)
+        public static List<HostedControl> GetHostedControls(IOrganizationService service)
         {
             QueryExpression hostedControlsQuery = new QueryExpression
             {
@@ -33,9 +33,9 @@ namespace XRMToolboxUSD.Repositories
             return service.RetrieveMultiple(hostedControlsQuery).Entities.Select(x => ConvertEntityToHostedControl(x)).ToList();
         }
 
-        private static USDHostedControl ConvertEntityToHostedControl(Entity entity)
+        private static HostedControl ConvertEntityToHostedControl(Entity entity)
         {
-            return new USDHostedControl
+            return new HostedControl
             {
                 Id = entity.GetAttributeValue<Guid>("uii_hostedapplicationid"),
                 Name = entity.GetAttributeValue<string>("uii_name"),

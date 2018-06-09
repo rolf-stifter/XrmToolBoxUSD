@@ -1,46 +1,46 @@
 ﻿using System.Windows.Forms;
-using XRMToolboxUSD.Models;
 using XRMToolboxUSD.Helpers.Interfaces;
+using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD.UserControls.HostedControls
 {
-    public partial class GeneralHostedControlControl : UserControl, DetailsUserControl<USDHostedControl>
+    public partial class GeneralHostedControlControl : UserControl, DetailsUserControl<HostedControl>
     {
         public GeneralHostedControlControl()
         {
             InitializeComponent();
         }
 
-        public void FillDetails(USDHostedControl usdHostedControl)
+        public void FillDetails(HostedControl hostedControl)
         {
-            textBox_name.Text = usdHostedControl.Name;
-            textBox_id.Text = usdHostedControl.Id.ToString();
-            textBox_sortOrder.Text = usdHostedControl.SortOrder.ToString();
-            textBox_displayName.Text = usdHostedControl.DisplayName;
-            comboBox_componentType.SelectedItem = usdHostedControl.ComponentType;
-            textBox_savedURL.Text = usdHostedControl.SavedURL;
-            checkBox_preFetchData.Checked = usdHostedControl.PreFetchData;
-            textBox_dashboardName.Text = usdHostedControl.DashboardName;
-            checkBox_allowMultiplePages.Checked = usdHostedControl.AllowMultiplePages;
-            textBox_hostingType.Text = usdHostedControl.HostingType.ToString();
-            textBox_maximumBrowsers.Text = usdHostedControl.MaximumBrowsers.ToString();
-            checkBox_scanForDataParameters.Checked = usdHostedControl.ScanForDataParameters;
-            textBox_panelType.Text = usdHostedControl.PanelType.ToString();
-            textBox_XAML.Text = usdHostedControl.Xaml;
-            textBox_hostedAppType.Text = usdHostedControl.HostedApplicationType.ToString();
-            checkBox_appIsGlobal.Checked = usdHostedControl.ApplicationIsGlobal;
-            checkBox_dependentOnWorkflow.Checked = usdHostedControl.DependentOnWorkflow;
-            textBox_displayGroup.Text = usdHostedControl.DisplayGroup;
-            textBox_minimumX.Text = usdHostedControl.MinimumX.ToString();
-            textBox_minimumY.Text = usdHostedControl.MinimumY.ToString();
-            textBox_optimalX.Text = usdHostedControl.OptimalX.ToString();
-            textBox_optimalY.Text = usdHostedControl.OptimalY.ToString();
-            textBox_adapter.Text = usdHostedControl.Adapter.ToString();
-            textBox_uri.Text = usdHostedControl.URI;
-            textBox_type.Text = usdHostedControl.Type;
-            checkBox_applicationDynamic.Checked = usdHostedControl.ApplicationIsDynamic;
-            checkBox_userCanClose.Checked = usdHostedControl.UserCanClose;
-            checkBox_showInToolbarDropdown.Checked = usdHostedControl.ShowInToolbarDropdown;
+            textBox_name.Text = hostedControl.Name;
+            textBox_id.Text = hostedControl.Id.ToString();
+            textBox_sortOrder.Text = hostedControl.SortOrder.ToString();
+            textBox_displayName.Text = hostedControl.DisplayName;
+            comboBox_componentType.SelectedItem = hostedControl.ComponentType;
+            textBox_savedURL.Text = hostedControl.SavedURL;
+            checkBox_preFetchData.Checked = hostedControl.PreFetchData;
+            textBox_dashboardName.Text = hostedControl.DashboardName;
+            checkBox_allowMultiplePages.Checked = hostedControl.AllowMultiplePages;
+            textBox_hostingType.Text = hostedControl.HostingType.ToString();
+            textBox_maximumBrowsers.Text = hostedControl.MaximumBrowsers.ToString();
+            checkBox_scanForDataParameters.Checked = hostedControl.ScanForDataParameters;
+            textBox_panelType.Text = hostedControl.PanelType.ToString();
+            textBox_XAML.Text = hostedControl.Xaml;
+            textBox_hostedAppType.Text = hostedControl.HostedApplicationType.ToString();
+            checkBox_appIsGlobal.Checked = hostedControl.ApplicationIsGlobal;
+            checkBox_dependentOnWorkflow.Checked = hostedControl.DependentOnWorkflow;
+            textBox_displayGroup.Text = hostedControl.DisplayGroup;
+            textBox_minimumX.Text = hostedControl.MinimumX.ToString();
+            textBox_minimumY.Text = hostedControl.MinimumY.ToString();
+            textBox_optimalX.Text = hostedControl.OptimalX.ToString();
+            textBox_optimalY.Text = hostedControl.OptimalY.ToString();
+            textBox_adapter.Text = hostedControl.Adapter.ToString();
+            textBox_uri.Text = hostedControl.URI;
+            textBox_type.Text = hostedControl.Type;
+            checkBox_applicationDynamic.Checked = hostedControl.ApplicationIsDynamic;
+            checkBox_userCanClose.Checked = hostedControl.UserCanClose;
+            checkBox_showInToolbarDropdown.Checked = hostedControl.ShowInToolbarDropdown;
         }
     }
 }

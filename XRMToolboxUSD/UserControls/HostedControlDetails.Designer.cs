@@ -48,7 +48,7 @@
             this.label_titleHostedControl.ForeColor = System.Drawing.Color.White;
             this.label_titleHostedControl.Location = new System.Drawing.Point(0, 0);
             this.label_titleHostedControl.Name = "label_titleHostedControl";
-            this.label_titleHostedControl.Size = new System.Drawing.Size(458, 23);
+            this.label_titleHostedControl.Size = new System.Drawing.Size(506, 23);
             this.label_titleHostedControl.TabIndex = 0;
             this.label_titleHostedControl.Text = "Hosted Control";
             // 
@@ -72,7 +72,7 @@
             this.tableLayoutPanel_subContainers.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_subContainers.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_subContainers.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel_subContainers.Size = new System.Drawing.Size(526, 1606);
+            this.tableLayoutPanel_subContainers.Size = new System.Drawing.Size(574, 1631);
             this.tableLayoutPanel_subContainers.TabIndex = 1;
             // 
             // generalHostedControlControl
@@ -80,10 +80,9 @@
             this.generalHostedControlControl.AutoSize = true;
             this.generalHostedControlControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.generalHostedControlControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.generalHostedControlControl.Location = new System.Drawing.Point(0, 0);
-            this.generalHostedControlControl.Margin = new System.Windows.Forms.Padding(3);
+            this.generalHostedControlControl.Location = new System.Drawing.Point(3, 3);
             this.generalHostedControlControl.Name = "generalHostedControlControl";
-            this.generalHostedControlControl.Size = new System.Drawing.Size(526, 693);
+            this.generalHostedControlControl.Size = new System.Drawing.Size(568, 694);
             this.generalHostedControlControl.TabIndex = 3;
             // 
             // hostingHostedControlControl
@@ -92,10 +91,9 @@
             this.hostingHostedControlControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.hostingHostedControlControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hostingHostedControlControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hostingHostedControlControl.Location = new System.Drawing.Point(0, 693);
-            this.hostingHostedControlControl.Margin = new System.Windows.Forms.Padding(3);
+            this.hostingHostedControlControl.Location = new System.Drawing.Point(3, 703);
             this.hostingHostedControlControl.Name = "hostingHostedControlControl";
-            this.hostingHostedControlControl.Size = new System.Drawing.Size(526, 767);
+            this.hostingHostedControlControl.Size = new System.Drawing.Size(568, 767);
             this.hostingHostedControlControl.TabIndex = 4;
             // 
             // automationsHostedControlControl
@@ -103,10 +101,9 @@
             this.automationsHostedControlControl.AutoSize = true;
             this.automationsHostedControlControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.automationsHostedControlControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.automationsHostedControlControl.Location = new System.Drawing.Point(0, 1460);
-            this.automationsHostedControlControl.Margin = new System.Windows.Forms.Padding(3);
+            this.automationsHostedControlControl.Location = new System.Drawing.Point(3, 1476);
             this.automationsHostedControlControl.Name = "automationsHostedControlControl";
-            this.automationsHostedControlControl.Size = new System.Drawing.Size(526, 73);
+            this.automationsHostedControlControl.Size = new System.Drawing.Size(568, 73);
             this.automationsHostedControlControl.TabIndex = 5;
             // 
             // extensionsHostedControlControl
@@ -114,10 +111,9 @@
             this.extensionsHostedControlControl.AutoSize = true;
             this.extensionsHostedControlControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.extensionsHostedControlControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.extensionsHostedControlControl.Location = new System.Drawing.Point(0, 1533);
-            this.extensionsHostedControlControl.Margin = new System.Windows.Forms.Padding(3);
+            this.extensionsHostedControlControl.Location = new System.Drawing.Point(3, 1555);
             this.extensionsHostedControlControl.Name = "extensionsHostedControlControl";
-            this.extensionsHostedControlControl.Size = new System.Drawing.Size(526, 73);
+            this.extensionsHostedControlControl.Size = new System.Drawing.Size(568, 73);
             this.extensionsHostedControlControl.TabIndex = 6;
             // 
             // panel_title
@@ -129,7 +125,7 @@
             this.panel_title.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_title.Location = new System.Drawing.Point(0, 0);
             this.panel_title.Name = "panel_title";
-            this.panel_title.Size = new System.Drawing.Size(526, 23);
+            this.panel_title.Size = new System.Drawing.Size(574, 23);
             this.panel_title.TabIndex = 2;
             // 
             // linkLabel_url
@@ -137,7 +133,7 @@
             this.linkLabel_url.AutoSize = true;
             this.linkLabel_url.Dock = System.Windows.Forms.DockStyle.Right;
             this.linkLabel_url.LinkColor = System.Drawing.Color.White;
-            this.linkLabel_url.Location = new System.Drawing.Point(458, 0);
+            this.linkLabel_url.Location = new System.Drawing.Point(506, 0);
             this.linkLabel_url.Name = "linkLabel_url";
             this.linkLabel_url.Size = new System.Drawing.Size(68, 13);
             this.linkLabel_url.TabIndex = 1;
@@ -156,7 +152,7 @@
             this.Controls.Add(this.tableLayoutPanel_subContainers);
             this.Controls.Add(this.panel_title);
             this.Name = "HostedControlDetails";
-            this.Size = new System.Drawing.Size(526, 1629);
+            this.Size = new System.Drawing.Size(574, 1654);
             this.tableLayoutPanel_subContainers.ResumeLayout(false);
             this.tableLayoutPanel_subContainers.PerformLayout();
             this.panel_title.ResumeLayout(false);

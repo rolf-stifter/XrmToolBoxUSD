@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using XRMToolboxUSD.Models;
+﻿using System.Windows.Forms;
 using XRMToolboxUSD.Helpers;
 using XRMToolboxUSD.Helpers.Interfaces;
+using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD.UserControls.Events
 {
-    public partial class GeneralEventControl : UserControl, DetailsUserControl<USDEvent>
+    public partial class GeneralEventControl : UserControl, DetailsUserControl<Event>
     {
         public GeneralEventControl()
         {
             InitializeComponent();
         }
 
-        public void FillDetails(USDEvent usdEvent)
+        public void FillDetails(Event @event)
         {
-            textBox_id.Text = usdEvent.Id.ToString();
-            textBox_name.Text = usdEvent.Name;
-            textBox_hostedApplication.Text = Entities.GetEntityReferenceName(usdEvent.HostedControl);
+            textBox_id.Text = @event.Id.ToString();
+            textBox_name.Text = @event.Name;
+            textBox_hostedApplication.Text = Entities.GetEntityReferenceName(@event.HostedControl);
         }
     }
 }

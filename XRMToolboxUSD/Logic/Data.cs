@@ -1,11 +1,8 @@
 ﻿using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XRMToolboxUSD.Models;
+using XRMToolboxUSD.Models.CRM;
+using XRMToolboxUSD.Models.Custom;
 
 namespace XRMToolboxUSD.Logic
 {
@@ -13,40 +10,16 @@ namespace XRMToolboxUSD.Logic
     {
         public static USDConfigurationData GetUSDConfigurationData(IOrganizationService service)
         {
-            //var usdConfigData = new USDConfigurationData();
-
-            //foreach (var hostedControl in Data.GetActiveHostedControls(service))
-            //{
-            //    var hostedControlModel = new HostedControl { Guid = hostedControl["uii_hostedapplicationid"].ToString(), Name = hostedControl["uii_name"].ToString() };
-
-            //    //Console.WriteLine($"{hostedControlModel.Name}");
-
-            //    //foreach (var usdEvent in Data.GetActiveEventsByHostedControlId(service, hostedControl["uii_hostedapplicationid"].ToString()))
-            //    //{
-            //    //    var usdEventModel = new Event { Guid = usdEvent["msdyusd_uiieventid"].ToString(), Name = usdEvent["msdyusd_name"].ToString() };
-
-            //    //    //Console.WriteLine($"\t{usdEvent["msdyusd_name"]}");
-
-            //    //    Data.GenerateActionTreeForEvent(service, usdEventModel);
-            //    //    hostedControlModel.Events.Add(usdEventModel);
-            //    //}
-
-            //    usdConfigData.HostedControls.Add(hostedControlModel);
-            //    break;
-            //}
-
-            //return usdConfigData;
-
             return new USDConfigurationData
             {
                 HostedControls =
                 {
-                    new USDHostedControl
+                    new HostedControl
                     {
                         Name = "TestRolf",
                         Id = Guid.Empty
                     },
-                    new USDHostedControl
+                    new HostedControl
                     {
                         Name = "TestRolf2",
                         Id = Guid.Empty
@@ -172,28 +145,6 @@ namespace XRMToolboxUSD.Logic
             };
 
             return service.RetrieveMultiple(activeActionsByActionQuery).Entities;
-        }
-
-        public static void GenerateActionTreeForEvent(IOrganizationService service, USDEvent usdEvent)
-        {
-            //foreach (var action in Data.GetActiveActionsByEventId(service, usdEvent))
-            //{
-            //    var actionModel = new Models.Action { Guid = action["msdyusd_agentscriptactionid"].ToString(), Name = action["msdyusd_name"].ToString() };
-            //    //Console.WriteLine($"\t\t{action["msdyusd_name"]}");
-            //    GenerateActionTreeForAction(service, actionModel, 3);
-            //    usdEvent.Actions.Add(actionModel);
-            //}
-        }
-
-        public static void GenerateActionTreeForAction(IOrganizationService service, Models.USDAction action, int indent)
-        {
-            //foreach (var subAction in Data.GetActiveActionsByActionId(service, action.Guid))
-            //{
-            //    var actionModel = new Models.USDAction { Id = subAction["msdyusd_agentscriptactionid"].ToString(), Name = subAction["msdyusd_name"].ToString() };
-            //    //Console.WriteLine($"{String.Concat(Enumerable.Repeat("\t", indent))}{actionModel.Name}");
-            //    GenerateActionTreeForAction(service, actionModel, indent + 1);
-            //    action.SubActions.Add(actionModel);
-            //}
         }
     }
 }

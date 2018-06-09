@@ -79,9 +79,8 @@
             this.generalActionControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.generalActionControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.generalActionControl.Location = new System.Drawing.Point(3, 3);
-            this.generalActionControl.Margin = new System.Windows.Forms.Padding(3);
             this.generalActionControl.Name = "generalActionControl";
-            this.generalActionControl.Size = new System.Drawing.Size(194, 202);
+            this.generalActionControl.Size = new System.Drawing.Size(142, 202);
             this.generalActionControl.TabIndex = 0;
             // 
             // advancedActionControl
@@ -91,9 +90,8 @@
             this.advancedActionControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.advancedActionControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedActionControl.Location = new System.Drawing.Point(3, 211);
-            this.advancedActionControl.Margin = new System.Windows.Forms.Padding(3);
             this.advancedActionControl.Name = "advancedActionControl";
-            this.advancedActionControl.Size = new System.Drawing.Size(194, 99);
+            this.advancedActionControl.Size = new System.Drawing.Size(142, 99);
             this.advancedActionControl.TabIndex = 1;
             // 
             // panel_title

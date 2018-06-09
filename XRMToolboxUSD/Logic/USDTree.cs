@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XRMToolboxUSD.Models;
+using XRMToolboxUSD.Models.CRM;
+using XRMToolboxUSD.Models.Custom;
 
 namespace XRMToolboxUSD.Logic
 {
     public static class USDTree
     {
-        public static List<USDHostedControl> GenerateUSDTree(USDConfigurationData usdConfigData)
+        public static List<HostedControl> GenerateUSDTree(USDConfigurationData usdConfigData)
         {
             return usdConfigData.HostedControls.Select(
                 h =>
@@ -25,7 +24,7 @@ namespace XRMToolboxUSD.Logic
                 }).ToList();
         }
 
-        private static List<USDAction> GetSubActionsByActionId(USDConfigurationData usdConfigData, Guid actionId)
+        private static List<Models.CRM.Action> GetSubActionsByActionId(USDConfigurationData usdConfigData, Guid actionId)
         {
             return usdConfigData.ActionSubActionConnections.Where(c => c.ActionId == actionId).Select(c =>
             {

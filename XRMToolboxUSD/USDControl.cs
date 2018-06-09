@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using XrmToolBox.Extensibility;
-using XRMToolboxUSD.Models;
 using XRMToolboxUSD.Repositories;
-using System.Web.Services.Description;
 using XRMToolboxUSD.Logic;
 using XRMToolboxUSD.UserControls;
+using XRMToolboxUSD.Models.Custom;
+using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD
 {
@@ -150,21 +144,21 @@ namespace XRMToolboxUSD
         {
             panel3.Controls.Clear();
 
-            if (usdEntity is USDHostedControl)
+            if (usdEntity is HostedControl)
             {
-                hostedCotrolDetailsControl.Tag = (USDHostedControl)usdEntity;
+                hostedCotrolDetailsControl.Tag = (HostedControl)usdEntity;
                 panel3.Controls.Add(hostedCotrolDetailsControl);
-                hostedCotrolDetailsControl.FillDetails((USDHostedControl)usdEntity);
+                hostedCotrolDetailsControl.FillDetails((HostedControl)usdEntity);
             }
-            else if (usdEntity is USDEvent)
+            else if (usdEntity is Event)
             {
                 panel3.Controls.Add(eventDetailsControl);
-                eventDetailsControl.FillDetails((USDEvent)usdEntity);
+                eventDetailsControl.FillDetails((Event)usdEntity);
             }
-            else if (usdEntity is USDAction)
+            else if (usdEntity is Models.CRM.Action)
             {
                 panel3.Controls.Add(actionDetailsControl);
-                actionDetailsControl.FillDetails((USDAction)usdEntity);
+                actionDetailsControl.FillDetails((Models.CRM.Action)usdEntity);
             }
         }
 

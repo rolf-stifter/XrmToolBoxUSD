@@ -3,14 +3,13 @@ using Microsoft.Xrm.Sdk.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XRMToolboxUSD.Helpers;
-using XRMToolboxUSD.Models;
+using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD.Repositories
 {
     public static class ActionSubActionRepository
     {
-        public static List<USDActionSubActionConnection> GetActionSubActionConnections(IOrganizationService service)
+        public static List<ActionSubActionConnection> GetActionSubActionConnections(IOrganizationService service)
         {
             QueryExpression query = new QueryExpression
             {
@@ -21,9 +20,9 @@ namespace XRMToolboxUSD.Repositories
             return service.RetrieveMultiple(query).Entities.Select(x => ConvertEntityToActionSubActionConnection(x)).ToList();
         }
 
-        private static USDActionSubActionConnection ConvertEntityToActionSubActionConnection(Entity entity)
+        private static ActionSubActionConnection ConvertEntityToActionSubActionConnection(Entity entity)
         {
-            return new USDActionSubActionConnection
+            return new ActionSubActionConnection
             {
                 Id = entity.GetAttributeValue<Guid>("msdyusd_subactioncallsid"),
                 ActionId = entity.GetAttributeValue<Guid>("msdyusd_agentscriptactionidtwo"),

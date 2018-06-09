@@ -5,13 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using XRMToolboxUSD.Helpers;
 using XRMToolboxUSD.Helpers.Enums;
-using XRMToolboxUSD.Models;
 
 namespace XRMToolboxUSD.Repositories
 {
     public static class ActionRepository
     {
-        public static List<USDAction> GetActions(IOrganizationService service)
+        public static List<Models.CRM.Action> GetActions(IOrganizationService service)
         {
             QueryExpression actionsQuery = new QueryExpression
             {
@@ -34,22 +33,21 @@ namespace XRMToolboxUSD.Repositories
             return service.RetrieveMultiple(actionsQuery).Entities.Select(x => ConvertEntityToAction(x)).ToList();
         }
 
-        public static void UpdateAction(IOrganizationService service, USDAction usdAction)
+        public static void UpdateAction(IOrganizationService service, Models.CRM.Action Action)
         {
-            var entity = ConvertActionToEntity(usdAction);
+            var entity = ConvertActionToEntity(Action);
             service.Update(entity);
         }
 
-
-        private static USDAction ConvertEntityToAction(Entity entity)
+        private static Models.CRM.Action ConvertEntityToAction(Entity entity)
         {
-            return new USDAction
+            return new Models.CRM.Action
             {
                 Id = entity.GetAttributeValue<Guid>("msdyusd_agentscriptactionid"),
                 Name = entity.GetAttributeValue<string>("msdyusd_name"),
                 Order = entity.GetAttributeValue<int>("msdyusd_order"),
                 HostedControl = entity.GetAttributeValue<EntityReference>("msdyusd_application"),
-                Action = entity.GetAttributeValue<EntityReference>("msdyusd_action"),
+                UIIAction = entity.GetAttributeValue<EntityReference>("msdyusd_action"),
                 Data = entity.GetAttributeValue<string>("msdyusd_actiondata"),
                 Condition = entity.GetAttributeValue<string>("msdyusd_condition"),
                 ShortcutKey = entity.GetAttributeValue<string>("msdyusd_shortcutkey"),
@@ -57,19 +55,19 @@ namespace XRMToolboxUSD.Repositories
             };
         }
 
-        private static Entity ConvertActionToEntity(USDAction usdAction)
+        private static Entity ConvertActionToEntity(Models.CRM.Action Action)
         {
             return new Entity
             {
                 Attributes =
                 {
-                    new KeyValuePair<string, object>("msdyusd_agentscriptactionid", usdAction.Id),
-                    new KeyValuePair<string, object>("msdyusd_name", usdAction.Name),
-                    new KeyValuePair<string, object>("msdyusd_order", usdAction.Order),
+                    new KeyValuePair<string, object>("msdyusd_agentscriptactionid", Action.Id),
+                    new KeyValuePair<string, object>("msdyusd_name", Action.Name),
+                    new KeyValuePair<string, object>("msdyusd_order", Action.Order),
                     //EntityReferences
-                    new KeyValuePair<string, object>("msdyusd_actiondata", usdAction.Data),
-                    new KeyValuePair<string, object>("msdyusd_condition", usdAction.Condition),
-                    new KeyValuePair<string, object>("msdyusd_shortcutkey", usdAction.ShortcutKey)
+                    new KeyValuePair<string, object>("msdyusd_actiondata", Action.Data),
+                    new KeyValuePair<string, object>("msdyusd_condition", Action.Condition),
+                    new KeyValuePair<string, object>("msdyusd_shortcutkey", Action.ShortcutKey)
                 }
             };
         }

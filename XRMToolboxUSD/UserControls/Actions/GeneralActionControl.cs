@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Windows.Forms;
 using XRMToolboxUSD.Helpers;
-using XRMToolboxUSD.Models;
+using XRMToolboxUSD.Models.CRM;
 using XRMToolboxUSD.Helpers.Interfaces;
 
 namespace XRMToolboxUSD.UserControls.Actions
 {
-    public partial class GeneralActionControl : UserControl, DetailsUserControl<USDAction>
+    public partial class GeneralActionControl : UserControl, DetailsUserControl<Models.CRM.Action>
     {
         public GeneralActionControl()
         {
             InitializeComponent();
         }
 
-        public void FillDetails(USDAction usdAction)
+        public void FillDetails(Models.CRM.Action action)
         {
-            textBox_id.Text = usdAction.Id.ToString();
-            textBox_name.Text = usdAction.Name;
-            textBox_order.Text = usdAction.Order.ToString();
-            textBox_hostedControl.Text = Entities.GetEntityReferenceName(usdAction.HostedControl);
-            textBox_action.Text = Entities.GetEntityReferenceName(usdAction.Action);
-            textBox_data.Text = usdAction.Data;
+            textBox_id.Text = action.Id.ToString();
+            textBox_name.Text = action.Name;
+            textBox_order.Text = action.Order.ToString();
+            textBox_hostedControl.Text = Entities.GetEntityReferenceName(action.HostedControl);
+            textBox_action.Text = Entities.GetEntityReferenceName(action.UIIAction);
+            textBox_data.Text = action.Data;
         }
     }
 }

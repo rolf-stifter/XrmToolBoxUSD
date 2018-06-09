@@ -3,15 +3,13 @@ using Microsoft.Xrm.Sdk.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XRMToolboxUSD.Models;
+using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD.Repositories
 {
     public static class EventActionConnectionRepository
     {
-        public static List<USDEventActionConnection> GetEventActionConnections(IOrganizationService service)
+        public static List<EventActionConnection> GetEventActionConnections(IOrganizationService service)
         {
             QueryExpression eventsQuery = new QueryExpression
             {
@@ -22,9 +20,9 @@ namespace XRMToolboxUSD.Repositories
             return service.RetrieveMultiple(eventsQuery).Entities.Select(x => ConvertEntityToEventActionConnection(x)).ToList();
         }
 
-        private static USDEventActionConnection ConvertEntityToEventActionConnection(Entity entity)
+        private static EventActionConnection ConvertEntityToEventActionConnection(Entity entity)
         {
-            return new USDEventActionConnection
+            return new EventActionConnection
             {
                 Id = entity.GetAttributeValue<Guid>("msdyusd_uiieventid"),
                 EventId = entity.GetAttributeValue<Guid>("msdyusd_uiieventid"),

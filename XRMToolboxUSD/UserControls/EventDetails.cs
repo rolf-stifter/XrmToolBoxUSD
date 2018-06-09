@@ -2,24 +2,24 @@
 using System.Windows.Forms;
 using XRMToolboxUSD.Helpers;
 using XRMToolboxUSD.Helpers.Interfaces;
-using XRMToolboxUSD.Models;
+using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD.UserControls
 {
-    public partial class EventDetails : UserControl,DetailsUserControl<USDEvent>
+    public partial class EventDetails : UserControl,DetailsUserControl<Event>
     {
         public EventDetails()
         {
             InitializeComponent();
         }
 
-        public void FillDetails(USDEvent usdEvent)
+        public void FillDetails(Event @event)
         {
-            if (usdEvent == null) return;
-            generalEventControl.FillDetails(usdEvent);
+            if (@event == null) return;
+            generalEventControl.FillDetails(@event);
 
             //Set Link in tag
-            linkLabel_url.Tag = $"{GlobalProperties.WebApplicationUrl}main.aspx?etn=msdyusd_uiievent&id={{{usdEvent.Id }}}&pagetype=entityrecord";
+            linkLabel_url.Tag = $"{GlobalProperties.WebApplicationUrl}main.aspx?etn=msdyusd_uiievent&id={{{@event.Id }}}&pagetype=entityrecord";
         }
 
         private void linkLabel_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -1,4 +1,4 @@
-﻿using XRMToolboxUSD.Models;
+﻿using XRMToolboxUSD.Models.CRM;
 
 namespace XRMToolboxUSD.Helpers.Interfaces
 {

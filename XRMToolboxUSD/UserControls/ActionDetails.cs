@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Windows.Forms;
-using XrmToolBox.Extensibility;
 using XRMToolboxUSD.Helpers;
 using XRMToolboxUSD.Helpers.Interfaces;
-using XRMToolboxUSD.Models;
 
 namespace XRMToolboxUSD.UserControls
 {
-    public partial class ActionDetails : UserControl, DetailsUserControl<USDAction>
+    public partial class ActionDetails : UserControl, DetailsUserControl<Models.CRM.Action>
     {
         public ActionDetails()
         {
             InitializeComponent();
         }
 
-        public void FillDetails(USDAction usdAction)
+        public void FillDetails(Models.CRM.Action action)
         {
-            if (usdAction == null) return;
-            generalActionControl.FillDetails(usdAction);
-            advancedActionControl.FillDetails(usdAction);
+            if (action == null) return;
+            generalActionControl.FillDetails(action);
+            advancedActionControl.FillDetails(action);
 
             //Set Link in tag
-            linkLabel_url.Tag = $"{GlobalProperties.WebApplicationUrl}main.aspx?etn=msdyusd_agentscriptaction&id={{{usdAction.Id }}}&pagetype=entityrecord";
+            linkLabel_url.Tag = $"{GlobalProperties.WebApplicationUrl}main.aspx?etn=msdyusd_agentscriptaction&id={{{action.Id }}}&pagetype=entityrecord";
         }
 
         private void linkLabel_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
